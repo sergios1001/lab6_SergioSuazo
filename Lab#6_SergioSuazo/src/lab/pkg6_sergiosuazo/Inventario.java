@@ -1,8 +1,10 @@
 
 package lab.pkg6_sergiosuazo;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -53,36 +55,60 @@ public class Inventario {
             for (Producto t : inventario) {
                 bw.write(t.getNombre()+ ";");
                 bw.write(t.getMarca()+ ";");
+                bw.write(t.getRegion()+ ";");
+                bw.write(t.getColorante()+ ";");
                 bw.write(t.getCodigo()+ ";");
                 bw.write(t.getPrecio()+ ";");
                 bw.write(t.getCantidad()+ ";");
                 bw.write(t.getAzucar()+ ";");
                 bw.write(t.getAlcohol()+ ";");
+                bw.write(t.getLote()+ ";");
+                bw.write(t.getFecha()+ ";");
                 
                 bw.write(';');
                 bw.newLine();
             }
+            bw.flush();
         }catch (Exception e){
             
         }
+        bw.close();
+        fw.close();
     }
     
     public void cargarArchivo()
     {
-        Scanner sc = null;
-        inventario = new ArrayList();
+        inventario = new ArrayList<>();
         if (archivo.exists()) {
-            try{
-                sc=new Scanner(archivo);
-                sc.useDelimiter(";");
-                while(sc.hasNext())
-                {
-                    inventario.add(new Producto(sc.next(),sc.next(),sc.next(),sc.next(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),new Date()));
+            try {
+                String linea;
+                FileReader fr = new FileReader(archivo);
+                BufferedReader br = new BufferedReader(fr);
+                while ((linea=br.readLine()) != null) {
+                    String[] tokens = linea.split(";");
+
+                    String [] token2 = tokens[3].split(",");
+                    String colorizante="";
+                    for (int i = 0; i < token2.length; i++) {
+                        colorizante+=token2[i];
+                    }
+                    inventario.add(new Producto(tokens[0],tokens[1],tokens[2],colorizante,Integer.parseInt(tokens[4]),Integer.parseInt(tokens[5]),Integer.parseInt(tokens[6]),Integer.parseInt(tokens[7]),Integer.parseInt(tokens[8]),Integer.parseInt(tokens[9]),new Date()));
+                tokens[0]
+                tokens[1]
+                tokens[2]
+                colorizante
+                Integer.parseInt(tokens[4])
+                Integer.parseInt(tokens[5])
+                Integer.parseInt(tokens[6])
+                Integer.parseInt(tokens[7])
+                Integer.parseInt(tokens[8])
+                Integer.parseInt(tokens[9])
+                new Date()   
                 }
             }
             catch(Exception e)
             {
-                
+                e.printStackTrace();
             }
         }
     }

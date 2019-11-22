@@ -20,11 +20,6 @@ public class ElBarrio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Colorantes = new javax.swing.JDialog();
-        jLabel9 = new javax.swing.JLabel();
-        cb_colorante = new javax.swing.JComboBox<>();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         Cotizacion = new javax.swing.JDialog();
         jScrollPane3 = new javax.swing.JScrollPane();
         jl_cotizacion = new javax.swing.JList<>();
@@ -69,46 +64,6 @@ public class ElBarrio extends javax.swing.JFrame {
         ta_cotizacion = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-
-        jLabel9.setText("Colorante:");
-
-        cb_colorante.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azul-4", "Rojo-69", "Verde-420", "Amarillo-77", "Blanco-0" }));
-
-        jButton6.setText("Agregar");
-
-        jButton7.setText("Cerrar");
-
-        javax.swing.GroupLayout ColorantesLayout = new javax.swing.GroupLayout(Colorantes.getContentPane());
-        Colorantes.getContentPane().setLayout(ColorantesLayout);
-        ColorantesLayout.setHorizontalGroup(
-            ColorantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ColorantesLayout.createSequentialGroup()
-                .addGroup(ColorantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(ColorantesLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
-                        .addComponent(cb_colorante, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(ColorantesLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(jButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton7)))
-                .addContainerGap(82, Short.MAX_VALUE))
-        );
-        ColorantesLayout.setVerticalGroup(
-            ColorantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ColorantesLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(ColorantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(cb_colorante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                .addGroup(ColorantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7))
-                .addGap(23, 23, 23))
-        );
 
         jScrollPane3.setViewportView(jl_cotizacion);
 
@@ -163,7 +118,7 @@ public class ElBarrio extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Marca", "Cantidad", "Precio", "Fecha de Vencimiento"
+                "Nombre", "Marca", "Region", "Colorizante", "Codigo", "Precio", "Cantidad", "Azucar (En Oz.)", "Alcohol %", "Lote", "Fecha de Vencimiento"
             }
         ));
         jScrollPane2.setViewportView(jt_inventario);
@@ -176,7 +131,7 @@ public class ElBarrio extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 752, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1025, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(139, 139, 139)
@@ -190,7 +145,7 @@ public class ElBarrio extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Inventario", jPanel1);
@@ -350,7 +305,7 @@ public class ElBarrio extends javax.swing.JFrame {
                     .addComponent(js_azucar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(js_alcohol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(dc_fecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -388,26 +343,27 @@ public class ElBarrio extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(139, 139, 139)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(242, 242, 242)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(237, 237, 237)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 816, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
+                .addGap(92, 92, 92)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addGap(60, 60, 60)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cotizacion", jPanel3);
@@ -418,7 +374,7 @@ public class ElBarrio extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 781, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -451,23 +407,23 @@ public class ElBarrio extends javax.swing.JFrame {
         fecha=dc_fecha.getDate();
             if(cb_azul.isSelected())
             {
-                colorante+="Azul-4";
+                colorante+="Azul-4 ,";
             }
             if(cb_rojo.isSelected())
             {
-                colorante+="Rojo-69";
+                colorante+="Rojo-69 ,";
             }
             if(cb_verde.isSelected())
             {
-                colorante+="Verde-420";
+                colorante+="Verde-420 ,";
             }
             if(cb_amarillo.isSelected())
             {
-                colorante+="Amarillo-77";
+                colorante+="Amarillo-77 ,";
             }
             if(cb_blanco.isSelected())
             {
-                colorante+="Blanco-07";
+                colorante+="Blanco-07 ,";
             }
         Producto p=new Producto(nombre, marca, region, colorante, codigo, precio, cantidad, azucar, alcohol, lote, fecha);
 
@@ -476,7 +432,7 @@ public class ElBarrio extends javax.swing.JFrame {
         i.getInventario().add(p);
         
             i.escribirArchivo();
-        Object[]newrow ={nombre,marca,cantidad,precio,fecha};
+        Object[]newrow ={nombre,marca,region,colorante,codigo,precio,cantidad,azucar,alcohol,lote,fecha};
         DefaultTableModel modelo=(DefaultTableModel) jt_inventario.getModel();
         modelo.addRow(newrow);
         jt_inventario.setModel(modelo);
@@ -544,17 +500,19 @@ public class ElBarrio extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ElBarrio().setVisible(true);
+                Inventario i = new Inventario("./Bebidas");
+                ArrayList<Producto> inventario=new ArrayList<>();
+                i.cargarArchivo();
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDialog Colorantes;
     private javax.swing.JDialog Cotizacion;
     private javax.swing.JCheckBox cb_amarillo;
     private javax.swing.JCheckBox cb_azul;
     private javax.swing.JCheckBox cb_blanco;
-    private javax.swing.JComboBox<String> cb_colorante;
     private javax.swing.JComboBox<String> cb_region;
     private javax.swing.JCheckBox cb_rojo;
     private javax.swing.JCheckBox cb_verde;
@@ -563,8 +521,6 @@ public class ElBarrio extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
@@ -579,7 +535,6 @@ public class ElBarrio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

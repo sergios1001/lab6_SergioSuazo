@@ -109,6 +109,14 @@ public class Producto {
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public String getColorante() {
+        return colorante;
+    }
+
+    public void setColorante(String colorante) {
+        this.colorante = colorante;
+    }
     
 
     @Override
