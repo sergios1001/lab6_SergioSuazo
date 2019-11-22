@@ -12,6 +12,11 @@ import javax.swing.table.DefaultTableModel;
 
 public class ElBarrio extends javax.swing.JFrame {
     static ArrayList<Producto> inventario;
+    static String cotizacion=("      Supermercado El Barrio      \n"
+            + "Factura # \n"
+            + "Produc.   Cant   Precio\n");
+
+    static int cont=1;
     static Inventario i = new Inventario("./Bebidas");
     public ElBarrio() {
         initComponents();
@@ -104,6 +109,11 @@ public class ElBarrio extends javax.swing.JFrame {
         });
 
         jButton9.setText("Cotizar");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout CotizacionLayout = new javax.swing.GroupLayout(Cotizacion.getContentPane());
         Cotizacion.getContentPane().setLayout(CotizacionLayout);
@@ -495,13 +505,25 @@ public class ElBarrio extends javax.swing.JFrame {
         if(jl_cotizacion.getSelectedIndex()>=0)
         {
             int pos=jl_cotizacion.getSelectedIndex();
-            
+            int cantidad;
+            cantidad=Integer.parseInt(JOptionPane.showInputDialog("Ingrese Cantidad a agregar: "));
+            int total;
+            String producto;
+            total=inventario.get(pos).getPrecio();
+            producto=inventario.get(pos).getNombre();
+            cotizacion+=producto+"   "+cantidad+"     "+String.valueOf(total)+"\n";
         }
         else
         {
             JOptionPane.showMessageDialog(this, "No se ha seleccionado ningun producto");
         }
     }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        ta_cotizacion.setText(cotizacion);
+        
+    }//GEN-LAST:event_jButton9MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
