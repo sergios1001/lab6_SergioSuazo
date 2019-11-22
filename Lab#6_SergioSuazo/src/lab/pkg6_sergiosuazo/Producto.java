@@ -2,16 +2,18 @@
 package lab.pkg6_sergiosuazo;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Producto {
     private String nombre,marca,region;
     private int codigo,precio,cantidad,azucar,alcohol,lote;
+    private Date fecha;
     private ArrayList<String> colorante=new ArrayList<String>();
 
     public Producto() {
     }
 
-    public Producto(String nombre, String marca, String region, int codigo, int precio, int cantidad, int azucar, int alcohol, int lote) {
+    public Producto(String nombre, String marca, String region, int codigo, int precio, int cantidad, int azucar, int alcohol, int lote, Date fecha) {
         this.nombre = nombre;
         this.marca = marca;
         this.region = region;
@@ -21,7 +23,9 @@ public class Producto {
         this.azucar = azucar;
         this.alcohol = alcohol;
         this.lote = lote;
+        this.fecha = fecha;
     }
+    
 
     public String getNombre() {
         return nombre;
@@ -102,6 +106,15 @@ public class Producto {
     public void setColorante(ArrayList<String> colorante) {
         this.colorante = colorante;
     }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
 
     @Override
     public String toString() {
