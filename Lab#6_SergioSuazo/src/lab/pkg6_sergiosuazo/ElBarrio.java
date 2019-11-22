@@ -6,13 +6,39 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ElBarrio extends javax.swing.JFrame {
-
+    static ArrayList<Producto> inventario;
+    static Inventario i = new Inventario("./Bebidas");
     public ElBarrio() {
         initComponents();
+        inventario=new ArrayList<>();
+        i.cargarArchivo();
+        inventario=i.getInventario();
+        String nombre,marca,region,colorante="";
+        int codigo,precio,cantidad,azucar,alcohol,lote;
+        Date fecha; 
+        
+        for (int j = 0; j < inventario.size(); j++) {
+            nombre=inventario.get(j).getNombre();
+            marca=inventario.get(j).getMarca();
+            region=inventario.get(j).getRegion();
+            colorante=inventario.get(j).getColorante();
+            codigo=inventario.get(j).getCodigo();
+            precio=inventario.get(j).getPrecio();
+            cantidad=inventario.get(j).getCantidad();
+            azucar=inventario.get(j).getAzucar();
+            alcohol=inventario.get(j).getAlcohol();
+            lote=inventario.get(j).getLote();
+            fecha=inventario.get(j).getFecha();
+            
+            Object[]newrow ={nombre,marca,region,colorante,codigo,precio,cantidad,azucar,alcohol,lote,fecha};
+            DefaultTableModel modelo=(DefaultTableModel) jt_inventario.getModel();
+            modelo.addRow(newrow);
+        }
     }
 
 
@@ -65,6 +91,7 @@ public class ElBarrio extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
+        jl_cotizacion.setModel(new DefaultListModel());
         jScrollPane3.setViewportView(jl_cotizacion);
 
         jLabel12.setText("Elija los productos que desea comprar");
@@ -427,11 +454,8 @@ public class ElBarrio extends javax.swing.JFrame {
             }
         Producto p=new Producto(nombre, marca, region, colorante, codigo, precio, cantidad, azucar, alcohol, lote, fecha);
 
-        
-        Inventario i = new Inventario("./Bebidas");
         i.getInventario().add(p);
-        
-            i.escribirArchivo();
+        i.escribirArchivo();
         Object[]newrow ={nombre,marca,region,colorante,codigo,precio,cantidad,azucar,alcohol,lote,fecha};
         DefaultTableModel modelo=(DefaultTableModel) jt_inventario.getModel();
         modelo.addRow(newrow);
@@ -457,6 +481,13 @@ public class ElBarrio extends javax.swing.JFrame {
         // TODO add your handling code here:
         Cotizacion.setVisible(true);
         Cotizacion.pack();
+        DefaultListModel m = (DefaultListModel)jl_cotizacion.getModel();
+        for (int i = 0; i < 10; i++) {
+           m.addElement(inventario.get(i)); 
+        }
+       jl_cotizacion.setModel(m);
+        
+        
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
@@ -500,9 +531,7 @@ public class ElBarrio extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ElBarrio().setVisible(true);
-                Inventario i = new Inventario("./Bebidas");
-                ArrayList<Producto> inventario=new ArrayList<>();
-                i.cargarArchivo();
+
                 
             }
         });

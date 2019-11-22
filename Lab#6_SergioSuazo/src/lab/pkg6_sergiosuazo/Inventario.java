@@ -93,17 +93,6 @@ public class Inventario {
                         colorizante+=token2[i];
                     }
                     inventario.add(new Producto(tokens[0],tokens[1],tokens[2],colorizante,Integer.parseInt(tokens[4]),Integer.parseInt(tokens[5]),Integer.parseInt(tokens[6]),Integer.parseInt(tokens[7]),Integer.parseInt(tokens[8]),Integer.parseInt(tokens[9]),new Date()));
-                tokens[0]
-                tokens[1]
-                tokens[2]
-                colorizante
-                Integer.parseInt(tokens[4])
-                Integer.parseInt(tokens[5])
-                Integer.parseInt(tokens[6])
-                Integer.parseInt(tokens[7])
-                Integer.parseInt(tokens[8])
-                Integer.parseInt(tokens[9])
-                new Date()   
                 }
             }
             catch(Exception e)
