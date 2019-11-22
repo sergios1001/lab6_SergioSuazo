@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Inventario {
-    private ArrayList<Producto> inventario = new ArrayList();
+    private ArrayList<Producto> inventario = new ArrayList<>();
     private File archivo =  null;
 
     public Inventario(String path) {
@@ -51,13 +51,16 @@ public class Inventario {
             fw= new FileWriter(archivo,false);
             bw=new BufferedWriter(fw);
             for (Producto t : inventario) {
-                bw.write(t.getNombre());
-                bw.write(t.getMarca());
-                bw.write(t.getCodigo());
-                bw.write(t.getPrecio());
-                bw.write(t.getCantidad());
-                bw.write(t.getAzucar());
-                bw.write(t.getAlcohol());
+                bw.write(t.getNombre()+ ";");
+                bw.write(t.getMarca()+ ";");
+                bw.write(t.getCodigo()+ ";");
+                bw.write(t.getPrecio()+ ";");
+                bw.write(t.getCantidad()+ ";");
+                bw.write(t.getAzucar()+ ";");
+                bw.write(t.getAlcohol()+ ";");
+                
+                bw.write(';');
+                bw.newLine();
             }
         }catch (Exception e){
             
@@ -74,7 +77,7 @@ public class Inventario {
                 sc.useDelimiter(";");
                 while(sc.hasNext())
                 {
-                    inventario.add(new Producto(sc.next(),sc.next(),sc.next(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),new Date()));
+                    inventario.add(new Producto(sc.next(),sc.next(),sc.next(),sc.next(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),sc.nextInt(),new Date()));
                 }
             }
             catch(Exception e)

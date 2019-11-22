@@ -5,18 +5,19 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Producto {
-    private String nombre,marca,region;
+    private String nombre,marca,region,colorante;
     private int codigo,precio,cantidad,azucar,alcohol,lote;
     private Date fecha;
-    private ArrayList<String> colorante=new ArrayList<String>();
+
 
     public Producto() {
     }
 
-    public Producto(String nombre, String marca, String region, int codigo, int precio, int cantidad, int azucar, int alcohol, int lote, Date fecha) {
+    public Producto(String nombre, String marca, String region, String colorante, int codigo, int precio, int cantidad, int azucar, int alcohol, int lote, Date fecha) {
         this.nombre = nombre;
         this.marca = marca;
         this.region = region;
+        this.colorante = colorante;
         this.codigo = codigo;
         this.precio = precio;
         this.cantidad = cantidad;
@@ -25,6 +26,8 @@ public class Producto {
         this.lote = lote;
         this.fecha = fecha;
     }
+
+
     
 
     public String getNombre() {
@@ -97,14 +100,6 @@ public class Producto {
 
     public void setLote(int lote) {
         this.lote = lote;
-    }
-
-    public ArrayList<String> getColorante() {
-        return colorante;
-    }
-
-    public void setColorante(ArrayList<String> colorante) {
-        this.colorante = colorante;
     }
 
     public Date getFecha() {
