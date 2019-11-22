@@ -1,8 +1,11 @@
 
 package lab.pkg6_sergiosuazo;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -363,13 +366,21 @@ public class ElBarrio extends javax.swing.JFrame {
         fecha=dc_fecha.getDate();
         Producto p=new Producto(nombre, marca, region, codigo, precio, cantidad, azucar, alcohol, lote, fecha);
         p.setColorante(colorantes);
+        
+        Inventario i = new Inventario("./Bebidas");
+        i.getInventario().add(p);
+        try {
+            i.escribirArchivo();
+        } catch (Exception e) {
+            
+        }
         colorantes.clear();
         
         Object[]newrow ={nombre,marca,cantidad,precio,fecha};
-        JOptionPane.showMessageDialog(this, "Se agrego la bebida exitosamente");
         DefaultTableModel modelo=(DefaultTableModel) jt_inventario.getModel();
         modelo.addRow(newrow);
         jt_inventario.setModel(modelo);
+        JOptionPane.showMessageDialog(this, "Se agrego la bebida exitosamente");
         tf_nombre.setText("");
         tf_marca.setText("");
         tf_codigo.setText("");
@@ -454,6 +465,5 @@ public class ElBarrio extends javax.swing.JFrame {
     private javax.swing.JTextField tf_marca;
     private javax.swing.JTextField tf_nombre;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Producto> inventario=new ArrayList();
     ArrayList<String> colorantes=new ArrayList();
 }
